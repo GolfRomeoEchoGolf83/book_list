@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def create 
-    Book.create title: params[:title]
+    Book.create title: params[:title], category_id: params[:category_id]
     redirect_to "/books"
   end
 
