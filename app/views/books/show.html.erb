@@ -1,5 +1,5 @@
 <h1>
-    <% @book.title %>
+    <%= @book.title_was %>
 </h1>
 
 <%= form_tag "/books/#{@book.id}", method: "patch" do %>
