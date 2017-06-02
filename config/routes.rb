@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  root 'books#index'
-  get 'books' => 'books#index'
-  get 'books/:id' => 'books#show'
-  patch 'books/:id' => 'books#update'
-  delete 'books/:id' => 'books#destroy'
-  post 'books' => 'books#create'
+  resources :books, only: [:index, :create, :show, :update, :destroy]
 end
 
 
