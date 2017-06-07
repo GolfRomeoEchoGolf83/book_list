@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.page(params[:page]).per(5)
     @categories = Category.all  
+    @book = Book.new
   end
 
   def create 
