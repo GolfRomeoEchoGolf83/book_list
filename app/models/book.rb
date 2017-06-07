@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-    belongs_to :category
+    belongs_to :category, optional: true
 
     validates :title, presence: {
         message: "Le titre doit être renseigné."
@@ -9,6 +9,4 @@ class Book < ActiveRecord::Base
     validates :title, uniqueness: {
         message: "Ce titre existe déjà."
     }
-
-    scope :french, -> { where(category_id: 1) }
 end
