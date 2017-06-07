@@ -3,5 +3,9 @@
     <p>
         <%= @book.errors[:title].first %>
     </p>
-    <input type="submit" value="Modifier le livre" />
-    <% end %>
+    <% if @book.persisted? %>
+        <input type="submit" value="Modifier le livre" />
+        <% else %>
+            <input type="submit" value="Ajouter le livre" />
+            <% end %>
+                <% end %>
