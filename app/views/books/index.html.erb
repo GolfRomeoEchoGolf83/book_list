@@ -3,16 +3,20 @@
 
     <% @books.each do |book| %>
         <p>
-            <%= book_link book %>
+            <a href="/books/<%= book.id %>">
+                <%= book.title %>
+            </a>
         </p>
         <% end %>
+            <%= render "books/form" %>
 
-            <%= form_tag "/books", method: "post" do %>
-                <input type="text" name="title" />
-                <select name="category_id">
+                <%= form_tag "/books", method: "post" do %>
+                    <input type="text" name="title" />
+                    <select name="category_id">
+
     <% @categories.each do |category| %>
       <option value="<%= category.id %>"><%= category.name %></option>
       <% end %>
       </select>
-                <input type="submit" value="Ajouter un livre" />
-                <% end %>
+                    <input type="submit" value="Ajouter un livre" />
+                    <% end %>
