@@ -1,10 +1,18 @@
-<h1>Liste des livres</h1>
-<% @books.each do |book| %>
-    <p>
-        <a href="/books/<%= book.id %>">
-            <%= book.title %>
-        </a>
-    </p>
-    <% end %>
+<html>
 
-        <%= render "books/form" %>
+<body>
+    <div class="app">
+        <h1>Liste des livres</h1>
+        <% @books.each do |book| %>
+            <p>
+                <a href="/books/<%= book.id %>">
+                    <%= book.title %>
+                </a>
+            </p>
+            <% end %>
+
+                <%= render "books/form" %>
+    </div>
+</body>
+
+</html>
