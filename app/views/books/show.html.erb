@@ -1,9 +1,17 @@
-<h1>
-    <%= @book.title_was %>
-</h1>
+<html>
 
-<%= render "books/form" %>
-    <%= form_tag "/books/#{@book.id}", method: "delete" do %>
-        <input type="submit" value="Supprimer le livre" />
-        <% end %>
-            <p><a href="/books">Retourner à l'index</a></p>
+<body>
+    <div class="app">
+        <h1>
+            <%= @book.title_was %>
+        </h1>
+
+        <%= render "books/form" %>
+            <%= form_tag "/books/#{@book.id}", method: "delete" do %>
+                <input type="submit" value="Supprimer le livre" />
+                <% end %>
+                    <p><a href="/books">Retourner à l'index</a></p>
+    </div>
+</body>
+
+</html>
